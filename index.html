@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>금호건설 스마트통합관제플랫폼 후보 명칭 안내</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wing: #1B5E20;
+    --arise: #E65100;
+    --aegis: #4A148C;
+    --nexus: #01579B;
+    --vera: #880E4F;
+    --smartera: #BF360C;
+    --wing-bg: #E8F5E9;
+    --arise-bg: #FFF3E0;
+    --aegis-bg: #F3E5F5;
+    --nexus-bg: #E1F5FE;
+    --vera-bg: #FCE4EC;
+    --smartera-bg: #FBE9E7;
+    --text: #1A1A1A;
+    --text-sub: #444;
+    --text-muted: #777;
+    --border: #DDD8D0;
+    --font-kr: 'Noto Sans KR', sans-serif;
+    --font-en: 'Outfit', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-kr);
+    background: #F5F4F0;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 1400px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+    color: white;
+    padding: 22px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left h1 {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+  }
+
+  .header-left h1 span { color: #C8102E; }
+
+  .header-left p {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+  }
+
+  /* CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto 1fr;
+    border-bottom: 1px solid var(--border);
+    align-items: stretch;
+  }
+
+  .card {
+    border-right: 1px solid var(--border);
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+  }
+  .card:last-child { border-right: none; }
+
+  .card-header {
+    padding: 14px 10px 10px;
+    text-align: center;
+    color: white;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card[data-n="wing"] .card-header { background: var(--wing); }
+  .card[data-n="arise"] .card-header { background: var(--arise); }
+  .card[data-n="aegis"] .card-header { background: var(--aegis); }
+  .card[data-n="nexus"] .card-header { background: var(--nexus); }
+  .card[data-n="vera"] .card-header { background: var(--vera); }
+  .card[data-n="smartera"] .card-header { background: var(--smartera); }
+
+  .card-header .name {
+    font-family: var(--font-en);
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    margin-bottom: 4px;
+  }
+
+  .card-header .fullname {
+    font-family: var(--font-en);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+
+  .card-body {
+    padding: 12px 11px 14px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    align-content: stretch;
+  }
+
+  .card-body > div {
+    min-height: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card[data-n="wing"] .card-body { background: var(--wing-bg); }
+  .card[data-n="arise"] .card-body { background: var(--arise-bg); }
+  .card[data-n="aegis"] .card-body { background: var(--aegis-bg); }
+  .card[data-n="nexus"] .card-body { background: var(--nexus-bg); }
+  .card[data-n="vera"] .card-body { background: var(--vera-bg); }
+  .card[data-n="smartera"] .card-body { background: var(--smartera-bg); }
+
+  .s-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 1px;
+  }
+
+  .card[data-n="wing"] .s-label { color: var(--wing); }
+  .card[data-n="arise"] .s-label { color: var(--arise); }
+  .card[data-n="aegis"] .s-label { color: var(--aegis); }
+  .card[data-n="nexus"] .s-label { color: var(--nexus); }
+  .card[data-n="vera"] .s-label { color: var(--vera); }
+  .card[data-n="smartera"] .s-label { color: var(--smartera); }
+
+  .s-text {
+    color: var(--text-sub);
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  /* TABLE */
+  .table-section {
+    padding: 20px 36px 24px;
+  }
+
+  .table-title {
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+
+  .comp-table thead th {
+    padding: 9px 6px;
+    font-family: var(--font-en);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: white;
+    text-align: center;
+  }
+
+  .comp-table thead th:first-child {
+    background: #333;
+    text-align: left;
+    font-family: var(--font-kr);
+    font-size: 10.5px;
+    letter-spacing: 0;
+    width: 120px;
+    padding-left: 10px;
+  }
+
+  .comp-table thead th:nth-child(2) { background: var(--wing); }
+  .comp-table thead th:nth-child(3) { background: var(--arise); }
+  .comp-table thead th:nth-child(4) { background: var(--aegis); }
+  .comp-table thead th:nth-child(5) { background: var(--nexus); }
+  .comp-table thead th:nth-child(6) { background: var(--vera); }
+  .comp-table thead th:nth-child(7) { background: var(--smartera); }
+
+  .comp-table tbody td {
+    padding: 7px 6px;
+    text-align: center;
+    border-bottom: 1px solid #EEEAE5;
+    font-size: 12px;
+  }
+
+  .comp-table tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    font-size: 10.5px;
+    color: var(--text-sub);
+    padding-left: 10px;
+  }
+
+  .comp-table tbody tr:last-child td { border-bottom: none; }
+  .comp-table tbody tr:nth-child(even) { background: #FAFAF8; }
+
+  .r-best {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 11px;
+  }
+
+  .r-good { color: var(--text-muted); font-size: 12px; }
+
+  td:nth-child(2) .r-best { background: rgba(27,94,32,0.12); color: var(--wing); }
+  td:nth-child(3) .r-best { background: rgba(230,81,0,0.12); color: var(--arise); }
+  td:nth-child(4) .r-best { background: rgba(74,20,140,0.12); color: var(--aegis); }
+  td:nth-child(5) .r-best { background: rgba(1,87,155,0.12); color: var(--nexus); }
+  td:nth-child(6) .r-best { background: rgba(136,14,79,0.12); color: var(--vera); }
+  td:nth-child(7) .r-best { background: rgba(191,54,12,0.12); color: var(--smartera); }
+
+  .tag { font-size: 9.5px; font-weight: 700; }
+
+  /* FOOTER */
+  .footer {
+    background: #F5F3EF;
+    padding: 10px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-legend {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .footer-legend span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1><span>KUMHO E&C</span> &nbsp;스마트 통합관리 시스템 — 후보 명칭 안내</h1>
+      <p>각 후보의 풀네임 · 핵심 의미 · CI 연계 · 경영철학 · 범용성을 확인 후 선택해 주세요.</p>
+    </div>
+    <div class="header-right">
+      스마트통합관제플랫폼<br>네이밍 사내 설문 참고자료
+    </div>
+  </div>
+
+  <!-- 7 CARDS -->
+  <div class="cards">
+
+    <!-- WING -->
+    <div class="card" data-n="wing">
+      <div class="card-header">
+        <div class="name">WING</div>
+        <div class="fullname">Whole Infrastructure<br>on Networked Grid</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">전체 인프라(Whole Infrastructure)를 네트워크화된 관제망(Networked Grid) 위에서 통합 운영</div></div>
+        <div><div class="s-label">CI 연계</div><div class="s-text">금호건설 심볼 Wing과 직결 — 브랜드 인식 즉각 형성</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"사고의 전환, 혁신의 시작" → 차세대 통합관제 전환 반영</div></div>
+        <div><div class="s-label">범용성</div><div class="s-text">Infrastructure가 토목·환경·플랜트·건축 전 공종 포괄</div></div>
+      </div>
+    </div>
+
+    <!-- ARISE -->
+    <div class="card" data-n="arise">
+      <div class="card-header">
+        <div class="name">ARISE</div>
+        <div class="fullname">Adaptive Real-time Integrated<br>Smart Engineering</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">현장 맞춤형 대응(Adaptive) + 실시간 통합 + 스마트 시공(Smart Engineering)</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"혁신의 시작" = Arise(일어남/시작)</div></div>
+        <div><div class="s-label">범용성</div><div class="s-text">Engineering이 모든 건설 공종을 포괄</div></div>
+        <div><div class="s-label">브랜드</div><div class="s-text">일상 영단어로 직관적 인식 — "일어서다/시작하다"의 긍정적 어감</div></div>
+      </div>
+    </div>
+
+    <!-- AEGIS -->
+    <div class="card" data-n="aegis">
+      <div class="card-header">
+        <div class="name">AEGIS</div>
+        <div class="fullname">Adaptive Engineering &<br>Guardian Integrated System</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">현장 적응형 엔지니어링 + 안전 수호(Guardian) + 통합 시스템</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"중대재해 Zero" + "건실하고 강한 금호건설" → 방패(Aegis) 이미지</div></div>
+        <div><div class="s-label">범용성</div><div class="s-text">안전·통합관리 중심, 공종 제한 없음</div></div>
+        <div><div class="s-label">브랜드</div><div class="s-text">그리스 신화 "방패" — 현장을 보호하는 수호 시스템 이미지 강조</div></div>
+      </div>
+    </div>
+
+    <!-- NEXUS -->
+    <div class="card" data-n="nexus">
+      <div class="card-header">
+        <div class="name">NEXUS</div>
+        <div class="fullname">Next-gen Engineering<br>eXpert Unified System</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">차세대(Next-gen) + 전문성(eXpert) + 통합(Unified System)</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"융복합 Value-Chain 완성" → 연결(Nexus)</div></div>
+        <div><div class="s-label">범용성</div><div class="s-text">개별장비 연결·통합, 공종 무관하게 표현</div></div>
+        <div><div class="s-label">브랜드</div><div class="s-text">라틴어 "연결" — 장비·데이터·공정이 하나로 이어지는 허브 이미지</div></div>
+      </div>
+    </div>
+
+    <!-- VERA -->
+    <div class="card" data-n="vera">
+      <div class="card-header">
+        <div class="name">VERA</div>
+        <div class="fullname">Vigilant Engineering<br>Real-time Assurance</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">선제적 감시(Vigilant) + 실시간 보증(Real-time Assurance)</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"내실 강화" → VERA (라틴어 "진실/본질")</div></div>
+        <div><div class="s-label">브랜드</div><div class="s-text">ARTERA와 어감·구조 유사 → 금호 브랜드 일관성 확보</div></div>
+        <div><div class="s-label">범용성</div><div class="s-text">실시간 보증·감시 중심, 전 공종 적용 가능</div></div>
+      </div>
+    </div>
+
+    <!-- SMARTERA -->
+    <div class="card" data-n="smartera">
+      <div class="card-header">
+        <div class="name">SMARTERA</div>
+        <div class="fullname">Smart + Art + Terra + Era</div>
+      </div>
+      <div class="card-body">
+        <div><div class="s-label">핵심 의미</div><div class="s-text">스마트 기술(Smart) + 건설 예술(Art) + 현장(Terra) + 새로운 시대(Era)</div></div>
+        <div><div class="s-label">브랜드 연계</div><div class="s-text">ARTERA 브랜드에 Smart를 결합한 확장형 — 브랜드 패밀리 직결</div></div>
+        <div><div class="s-label">조어 구조</div><div class="s-text">ARTERA(Art+Terra+Era)와 동일 복합어 문법 — 약어가 아닌 의미 합성</div></div>
+        <div><div class="s-label">경영철학</div><div class="s-text">"사고의 전환, 혁신의 시작" → 스마트 건설의 새로운 시대(Era) 선언</div></div>
+      </div>
+    </div>
+
+    <!-- 기타 -->
+    <div class="card" style="background:#F9F8F5;">
+      <div class="card-header" style="background:#999;">
+        <div class="name" style="font-size:18px; letter-spacing:1px;">기타</div>
+        <div class="fullname">직접 제안</div>
+      </div>
+      <div class="card-body" style="background:#F9F8F5;">
+        <div><div class="s-label" style="color:#999;">직접 제안</div><div class="s-text">위 6개 후보 외에 새로운 명칭을 자유롭게 제안할 수 있습니다.</div></div>
+        <div><div class="s-label" style="color:#999;">제안 방법</div><div class="s-text">설문지 Q1 응답란에서 "기타" 선택 후 직접 입력</div></div>
+        <div><div class="s-label" style="color:#999;">참고</div><div class="s-text">영문 약어·복합어·한글 명칭 등 형식 제한 없음</div></div>
+        <div><div class="s-label" style="color:#999;">반영 기준</div><div class="s-text">제안된 명칭은 네이밍 TF 검토 후 최종 후보에 반영 가능</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-section">
+    <div class="table-title">후보 명칭 비교 평가</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>평가 기준</th>
+          <th>WING</th>
+          <th>ARISE</th>
+          <th>AEGIS</th>
+          <th>NEXUS</th>
+          <th>VERA</th>
+          <th>SMARTERA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CI·경영철학 직결</td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+        </tr>
+        <tr>
+          <td>공종 무관 범용성</td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+        </tr>
+        <tr>
+          <td>경쟁사(G-SITE) 차별화</td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+        </tr>
+        <tr>
+          <td>발음·기억 용이성</td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-good">○</span></td>
+        </tr>
+        <tr>
+          <td>브랜드 패밀리 일관성</td>
+          <td><span class="r-best">◎</span> <span class="tag" style="color:var(--wing);">(CI)</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-best">◎</span> <span class="tag" style="color:var(--vera);">(ARTERA)</span></td>
+          <td><span class="r-best">◎</span> <span class="tag" style="color:var(--smartera);">(ARTERA)</span></td>
+        </tr>
+        <tr>
+          <td>약어 자연스러움</td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-good">○</span></td>
+          <td><span class="r-best">◎</span></td>
+          <td><span class="r-best">◎</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-legend">
+      <span><span class="r-best" style="width:16px;height:16px;font-size:9px;background:rgba(0,0,0,0.06);color:#333;">◎</span> 최우수</span>
+      <span><span class="r-good" style="font-size:10px;">○</span> 양호</span>
+    </div>
+    <div>금호건설 스마트통합관제플랫폼 네이밍 TF &nbsp;|&nbsp; 2026.04</div>
+  </div>
+</div>
+
+</body>
+</html>
